@@ -11,12 +11,10 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-<<<<<<< HEAD
 import { LoggingService } from './shared/logging.service';
-=======
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
->>>>>>> 974ad278e75b0b2eb28ee1a86fea1a47e6179ce9
+import { ShoppinglistService } from './shopping-list/shoppinglist.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +34,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     FormsModule,
     HttpModule
   ],
-  providers: [LoggingService],
+  providers: [LoggingService, ShoppinglistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

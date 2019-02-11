@@ -9,7 +9,7 @@ import { ShoppinglistService } from './shoppinglist.service';
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css'],
-  providers: [ShoppinglistService]
+  providers: []
 })
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[];
@@ -20,11 +20,9 @@ export class ShoppingListComponent implements OnInit {
 
   ngOnInit() {
     this.ingredients = this.shoppingListService.getShoppingList();
-  }
-
-  onIngredientAdded(ingredientAdded: Ingredient) {
-    this.ingredients.push(ingredientAdded);
-    this.loggingService.loggingFuntion(this.ingredients);
+    this.shoppingListService.ingredientsChanged.subscribe((newIngredients: Ingredient[]) => {
+      this.ingredients = newIngredients;
+    });
   }
 
 }
