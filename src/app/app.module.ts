@@ -15,6 +15,7 @@ import { LoggingService } from './shared/logging.service';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppinglistService } from './shopping-list/shoppinglist.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ShoppinglistService } from './shopping-list/shoppinglist.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [LoggingService, ShoppinglistService],
   bootstrap: [AppComponent]
